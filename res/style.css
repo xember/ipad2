@@ -23,6 +23,17 @@ body{
 	padding: 0px;
 	position: relative;
 }
+#splash{
+	overflow:hidden;
+	width: 1024px;
+	height: 748px;
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+}
+#splash img{
+	width: 100%;
+}
 #top{
 	height: 364.5px;
 	background-image: url('images/topbackground.png');
@@ -296,8 +307,4 @@ display: none;
 position: absolute;
 top: 20px;
 left: 280px;
-}
-#splash{
-	z-index:   9;
-	height: 100%;
 }
