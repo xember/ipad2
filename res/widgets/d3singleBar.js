@@ -1,0 +1,79 @@
+/*
+	Function below is a generic reusable chart for a simple arc.
+	An empty <svg/> tag must exist in your html, and the selector must select that single element.
+	Configurations options can be passed in an object through the second variable.
+	$Revision: 80 $
+
+	Sample:
+    var chart = new d3singleBar("#d3 svg", {
+        width: 120,
+        height: 120,
+        bgWidth: 18,
+        bgColor: "black",
+        arcWidth: 14,
+        arcColors: ["#277dba", "red"],
+        thresholds: [0.8],
+        valueSize: 20
+    });
+	chart.render(0.5);
+
+*/
+function d3singleBar(selector, custom) {
+    // basic checks
+    if (typeof(d3) !== "object" || typeof(rts) !== "object") {
+        alert("d3gauge1 needs both D3 and RTS!");
+        return false;
+    }
+    // check if selector is filled
+    if (selector === null) {
+        alert("selector is mandatory!");
+        return false;
+    }
+    // generic properties
+    var _chart = {},
+        _current = 0,
+        _data = 0,
+        _svg,
+        _value,
+        _rect;
+    // default configuration values for this specific chart
+    var config = {
+        width: 200, // default width
+        height: 200, // default height
+        duration: 750, // transition duration
+        bgWidth: 30, // width of background ring
+        bgColor: "black", // bar background
+        barWidth: 25, // width of arc that represents the value
+        barColor: "red", // arc foreground colors (depend on threshold values)
+        barRounding: 5
+    }
+    // overwrite config properties with custom values (if present)
+    if (custom) {
+        for (var prop in custom) {
+            config[prop] = custom[prop];
+        }
+    }
+    // check if selector points to existing svg
+    _svg = d3.select(selector);
+    if (_svg.empty()) {
+        return false;
+    }
+    // add/change attributes of svg
+    _svg.attr("width", config.width)
+        .attr("height", config.height)
+        .attr("viewBox", "0 0 " + config.width + " " + config.height);
+
+    //add rect background
+    _rect = _svg.selectAll("svg")
+        .append("rect")
+        .attr("x", 10)
+        .attr("y", 10)
+        .attr("rx", config.barRounding)
+        .attr("ry", config.barRounding)
+        .attr("width", config.barWidth)
+        .attr("height", config.height);
+
+
+    // always return chart object
+    return _chart;
+}

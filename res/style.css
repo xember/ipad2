@@ -1,0 +1,299 @@
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('fonts/ubuntu/ubuntu-regular-webfont.eot');
+    src: url('fonts/ubuntu/ubuntu-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ubuntu/ubuntu-regular-webfont.woff') format('woff'),
+         url('fonts/ubuntu/ubuntu-regular-webfont.ttf') format('truetype'),
+         url('fonts/ubuntu/ubuntu-regular-webfont.svg#ubunturegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+	overflow:hidden;
+	font-family: 'ubunturegular';
+}
+
+#container{
+	overflow:hidden;
+	width: 1024px;
+	height: 748px;
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+}
+#top{
+	height: 364.5px;
+	background-image: url('images/topbackground.png');
+	background-size: cover;
+
+}
+#top_first{
+	height: 100%;
+	width: 341px;
+	float: left;
+}
+#top_second{
+	height: 100%;
+	width: 342px;
+	float: left;	
+}
+#circle_widget4{
+	margin-top: 30px;
+	margin-left: 70px;
+	padding: 20px;
+}
+#top_third{
+	height: 100%;
+	width: 341px;
+	float: left;
+}
+#gauge1{
+	margin-top: 80px;
+}
+#bgbgColor{
+
+}
+#middle{
+	height: 135px;
+	background-color: #022553;
+
+}
+#bottom{
+	height: 250px;
+	margin: 0px;
+	padding: 0px;
+}
+#left{
+	height: 100%;
+	width: 490px;
+	margin-left: 10px;
+	border-right: solid gray 1px;
+	float: left;
+}
+#right{
+	height: 100%;
+	width: 490px;
+	margin-left: 10px;
+	float: left;
+}
+#middle_first{
+	height: 100%;
+	width: 341px;
+	border-right: solid gray 1px;
+	float: left;
+}
+#middle_second{
+	height: 100%;
+	width: 340px;
+	border-right: solid gray 1px; 
+	float: left;
+}
+#circle_widget1{
+	margin-top: 20px;
+	margin-left: 30px;
+}
+#circle_widget2{
+	margin-top: 20px;
+	margin-left: 30px;
+}
+#circle_widget3{
+	margin-top: 20px;
+	margin-left: 30px;
+}
+#middle_third{
+	height: 100%;
+	width: 341px;
+	float: left;
+}
+
+.break{
+	clear:both;
+	margin: 0px;
+}
+#squarebutton{
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-right: 7px;
+}
+#stripesbutton{
+	margin-left: 290px;
+	margin-top: 20px;	
+}
+#menuright {
+	position:absolute;
+	top:0;
+	right:0;
+	height: 100%;
+	width: 75px;
+	background-color: white;
+	z-index: 6;
+	display: none;
+}
+#menutableright{
+	width: 100%;
+}
+#menutableright td{
+	text-align:center;
+	vertical-align: middle;
+	height: 75px;
+	border-bottom: solid lightgray 1px;
+}
+#shadow {
+	position: absolute;
+	top: 0px;
+	right: 75px;
+	width: 10px;
+	height: 1000px;
+    z-index: 6;
+    display: none;
+}
+
+#menuleft{
+	position:absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 260px;
+	background-color: white;
+	z-index: 6;
+	display: none;	
+}
+
+#menutableleft{
+	width: 100%;
+}
+#menutableleft td{
+	text-align:left;
+	vertical-align: middle;
+	height: 140px;
+	border-bottom: solid lightgray 1px;
+}
+#menutableleft td svg{
+	margin-left: 20px;
+}
+
+#interactiontxt{
+	margin-left: 50px;
+	font-size: 11px;
+	font-weight:bold;
+}
+#waittxt{
+	font-size: 11px;
+	font-weight:bold;
+}
+.desc{
+	font-size: 11px;
+	font-weight:bold;
+}
+.largenumber{
+	font-size: 28px;
+	color: white;	
+}
+#AHT {
+    position: absolute;
+    top: 250px;
+    left: 875px;
+}
+#AHTText {
+    position: absolute;
+    top: 287px;
+    left: 840px;
+}
+#AWT {
+    position: absolute;
+    top: 150px;
+    left: 875px;
+}
+#AWTText {
+    position: absolute;
+    top: 185px;
+    left: 840px;
+}
+#totalsl {
+    position: absolute;
+    top: 287px;
+    left: 475px;
+}
+#WAIT {
+    position: absolute;
+    top: 250px;
+    left: 50px;
+}
+#ABAND {
+    position: absolute;
+    top: 250px;
+    left: 170px;
+}
+#WAITText {
+    position: absolute;
+    left: 40px;
+    top: 285px;
+}
+#ABANDText {
+    position: absolute;
+    left: 150px;
+    top: 285px;
+}
+#ring{
+    width: 5px;
+    position: absolute;
+    left: 97px;
+    top: 128px;
+    z-index: 5;
+}
+#ring1{
+    width: 5px;
+    position: absolute;
+    left: 141px;
+    top: 128px;
+    z-index: 5;
+}
+#ring2{
+    width: 5px;
+    position: absolute;
+    left: 185px;
+    top: 128px;
+    z-index: 5;
+}
+#ring3{
+    width: 5px;
+    position: absolute;
+    left: 228px;
+    top: 128px;
+    z-index: 5;
+}
+#ring4{
+    width: 3px;
+    position: absolute;
+    left: 55px;
+    top: 128px;
+    z-index: 5;
+}
+#ring5{
+    width: 3px;
+    position: absolute;
+    left: 272px;
+    top: 128px;
+    z-index: 5;
+}
+#threed{
+	width: 218px;
+    position: absolute;
+	left: 56px;
+	top: 141px;  
+	z-index: 2;
+}
+#bluecell{
+	background-color: #012553;
+}
+#lightbluecell{
+	background-color: #005fb5;
+}
+#btn-close{
+display: none;
+position: absolute;
+top: 20px;
+left: 280px;
+}
