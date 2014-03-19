@@ -26,10 +26,11 @@ body{
 #splash{
 	overflow:hidden;
 	width: 1024px;
-	height: 748px;
+	height: 768px;
 	margin: 0px;
 	padding: 0px;
 	position: relative;
+	background-color: #0051c3;
 }
 #splash img{
 	width: 100%;
