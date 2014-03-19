@@ -297,3 +297,7 @@ position: absolute;
 top: 20px;
 left: 280px;
 }
+#splash{
+	z-index:   9;
+	height: 100%;
+}

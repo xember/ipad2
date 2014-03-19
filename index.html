@@ -39,7 +39,7 @@
           rts.jws("ws://rts-demo.prime-contact.com:8888/jWebSocket/jWebSocket"); // this will initiate a websocket connection to our simulator
           rts.object('site','simulator');   // this opens a connection to our simulator statistics
     </script>
-
+    <img id="splash" src="res\images\splash.png">
     <div id="container">
       <img id="btn-close" src="res\images\btn-close.png" width="20px">
       <div id="menuleft">
@@ -309,7 +309,7 @@
 
 
       setTimeout(function(){
-        navigator.splashscreen.hide();
+        $("#splash").hide();
         },3000);
 
       //handle rightmenu apperance
