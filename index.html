@@ -295,9 +295,7 @@
             if( $('body').data('stats').hasOwnProperty('RehousingLongestWaitTime') ){
               gauge1.render($('body').data('stats')['RehousingLongestWaitTime']);
             }
-            bar1.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);
-
-            bar2.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);             
+         
                      
           }
         },1500);
@@ -311,6 +309,14 @@
             }
           }
         },5000);
+
+      setInterval(function(){
+            bar1.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);
+
+            bar2.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);    
+        },4000);
+
+
 
       //splashscreen
 
@@ -399,7 +405,7 @@
   var bar1 = d3singleBar("#barchart1",{
         width: 200, // default width
         height: 62, // default height
-        duration: 1500, // transition duration
+        duration: 2000, // transition duration
         bgWidth: 30, // width of background ring
         bgColor: "black", // bar background
         bgbarWidth: 8, // width of arc that represents the value
@@ -412,7 +418,7 @@
   var bar2 = d3singleBar("#barchart2",{
         width: 200, // default width
         height: 62, // default height
-        duration: 1500, // transition duration
+        duration: 2000, // transition duration
         bgWidth: 30, // width of background ring
         bgColor: "black", // bar background
         bgbarWidth: 8, // width of arc that represents the value
