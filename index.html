@@ -129,13 +129,13 @@
       </div>
     <div class="break"></div>
       <div id="middle">
-          <div id="middle_first"><svg></svg></div>
+          <div id="middle_first"><svg id="barchart1"></svg></div>
           <div id="middle_second">
             <svg id="circle_widget1"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">ENGLAND</text></svg>
             <svg id="circle_widget2"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">HOLLAND</text></svg>
             <svg id="circle_widget3"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">DENMARK</text></svg>
           </div>
-          <div id="middle_third"></div>
+          <div id="middle_third"><svg id="barchart2"></svg></div>
       </div>
     <div class="break"></div>
       <div id="bottom">
@@ -294,7 +294,11 @@
 
             if( $('body').data('stats').hasOwnProperty('RehousingLongestWaitTime') ){
               gauge1.render($('body').data('stats')['RehousingLongestWaitTime']);
-            }         
+            }
+            bar1.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);
+
+            bar2.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);             
+                     
           }
         },1500);
 
@@ -392,16 +396,32 @@
         StatusBar.backgroundColorByHexString("#0066AE");
     }
        
-  d3singleBar("#middle_first",{
-        width: 10, // default width
-        height: 75, // default height
-        duration: 750, // transition duration
+  var bar1 = d3singleBar("#barchart1",{
+        width: 200, // default width
+        height: 62, // default height
+        duration: 2000, // transition duration
         bgWidth: 30, // width of background ring
         bgColor: "black", // bar background
-        barWidth: 5, // width of arc that represents the value
-        barColor: "red", // arc foreground colors (depend on threshold values)
+        bgbarWidth: 8, // width of arc that represents the value
+        barColor: "#0051c3", // arc foreground colors (depend on threshold values)
         barRounding: 5,
+        barWidth: 8,
+        spacer: 14
     });
+
+  var bar2 = d3singleBar("#barchart2",{
+        width: 200, // default width
+        height: 62, // default height
+        duration: 2000, // transition duration
+        bgWidth: 30, // width of background ring
+        bgColor: "black", // bar background
+        bgbarWidth: 8, // width of arc that represents the value
+        barColor: "#0051c3", // arc foreground colors (depend on threshold values)
+        barRounding: 5,
+        barWidth: 8,
+        spacer: 14
+    });
+    
 
     </script>
  </body>

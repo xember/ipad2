@@ -326,3 +326,13 @@ position: absolute;
 top: 21px;
 left: 325px;
 }
+#barchart1{
+	position: relative;
+	top: 31px;
+	left:60px;
+}
+#barchart2{
+	position: relative;
+	top: 31px;
+	left:60px;
+}
