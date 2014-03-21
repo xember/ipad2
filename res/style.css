@@ -33,6 +33,7 @@ body{
 	padding: 0px;
 	position: relative;
 	background-color: #0051c3;
+	display: none;
 }
 #splash img{
 	width: 100%;
@@ -54,9 +55,20 @@ body{
 	float: left;	
 }
 #circle_widget4{
-	margin-top: 30px;
-	margin-left: 70px;
-	padding: 20px;
+	position: absolute;
+	top:80px;
+	left:440px;
+}
+#background_circle{
+	position: absolute;
+	top:75px;
+	left:435px;	
+	height:160px;
+	width:160px;
+}
+#background_circle svg{
+	margin-top: 5px;
+	margin-left: 5px;
 }
 #top_third{
 	height: 100%;
@@ -140,7 +152,7 @@ body{
 	top:0;
 	right:0;
 	height: 100%;
-	width: 75px;
+	width: 62px;
 	background-color: white;
 	z-index: 6;
 	display: none;
@@ -157,7 +169,7 @@ body{
 #shadow {
 	position: absolute;
 	top: 0px;
-	right: 75px;
+	right: 62px;
 	width: 10px;
 	height: 1000px;
     z-index: 6;
@@ -169,7 +181,7 @@ body{
 	top:0;
 	left:0;
 	height: 100%;
-	width: 260px;
+	width: 305px;
 	background-color: white;
 	z-index: 6;
 	display: none;	
@@ -189,6 +201,9 @@ body{
 }
 
 #interactiontxt{
+	position: absolute;
+	top: 195px;
+	left: 4px;
 	margin-left: 50px;
 	font-size: 11px;
 	font-weight:bold;
@@ -253,50 +268,50 @@ body{
 #ring{
     width: 5px;
     position: absolute;
-    left: 97px;
-    top: 128px;
+    left: 99px;
+    top: 141px;
     z-index: 5;
 }
 #ring1{
     width: 5px;
     position: absolute;
-    left: 141px;
-    top: 128px;
+    left: 143px;
+    top: 141px;
     z-index: 5;
 }
 #ring2{
     width: 5px;
     position: absolute;
-    left: 185px;
-    top: 128px;
+    left: 187px;
+    top: 141px;
     z-index: 5;
 }
 #ring3{
     width: 5px;
     position: absolute;
-    left: 228px;
-    top: 128px;
+    left: 230px;
+    top: 141px;
     z-index: 5;
 }
 #ring4{
     width: 3px;
     position: absolute;
-    left: 55px;
-    top: 128px;
+    left: 57px;
+    top: 141px;
     z-index: 5;
 }
 #ring5{
     width: 3px;
     position: absolute;
-    left: 272px;
-    top: 128px;
+    left: 274px;
+    top: 141px;
     z-index: 5;
 }
 #threed{
 	width: 218px;
     position: absolute;
-	left: 56px;
-	top: 141px;  
+	left: 58px;
+	top: 154px;  
 	z-index: 2;
 }
 #bluecell{
@@ -308,6 +323,6 @@ body{
 #btn-close{
 display: none;
 position: absolute;
-top: 20px;
-left: 280px;
+top: 21px;
+left: 325px;
 }

@@ -48,7 +48,10 @@ function d3arcSingle(selector, custom) {
         arcColors: ["orange", "red"], // arc foreground colors (depend on threshold values)
         thresholds: [1], // array of threshold values [0-1] that mark the arcColors
         valueColor: "black", // color of value that will be printed in the center
-        valueSize: 30 // font-size [px] of the value that will be printed in the center
+        valueSize: 30, // font-size [px] of the value that will be printed in the center
+        secondBgrnd: false,
+        secondBgrndWidth: 34,
+        secondBgrndColor: "black"
     }
     // overwrite config properties with custom values (if present)
     if (custom) {

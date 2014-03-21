@@ -55,19 +55,19 @@
         <img id="shadow" src="res\images\shadow.png">
         <table id="menutableright">
           <tr>
-            <td><img id="exit" src="res\images\icon-close menu.png" width="30px"></td>
+            <td><img id="exit" src="res\images\icon-close menu.png" width="20.5px"></td>
           </tr>
           <tr>
-            <td><img id="overview" src="res\images\icon-cc overview.png" width="30px"></td>
+            <td><img id="overview" src="res\images\icon-cc overview.png" width="31.5px"></td>
           </tr>
           <tr>
             <td><img id="location" src="res\images\icon-location.png" width="30px"></td>
           </tr>
           <tr>
-            <td><img id="queue" src="res\images\icon-queue.png" width="30px"></td>
+            <td><img id="queue" src="res\images\icon-queue.png" width="20px"></td>
           </tr>
           <tr>
-            <td><img id="group" src="res\images\icon-group.png" width="30px"></td>
+            <td><img id="group" src="res\images\icon-group.png" width="35px"></td>
           </tr>
           <tr>
             <td><img id="agent" src="res\images\icon-agent.png" width="30px"></td>
@@ -80,7 +80,7 @@
             <td></td>
           </tr>
           <tr>
-            <td id="lightbluecell"><img id="" src="res\images\icon-alert.png" width="30px"></td>
+            <td id="lightbluecell"><img id="" src="res\images\icon-alert.png" width="29px"></td>
           </tr>
           <tr>
             <td id="bluecell"><img id="" src="res\images\icon-settings.png" width="30px"></td>
@@ -108,7 +108,8 @@
             <img id="threed" src="res\images\3d-effect.png">
           </div>
           <div id="top_second">
-            <svg id="circle_widget4" width="120" height="150" viewBox="0 0 120 150"><circle cx="85" cy="85" r="81" stroke="black" stroke-width="14" fill="none"/></svg>
+            <svg id="background_circle"><circle cx="77" cy="77" r="68" stroke="black" stroke-width="16" fill="none"/></svg>
+            <svg id="circle_widget4" width="120" height="150" viewBox="0 0 120 150"></svg>
             <span id="totalsl"class="desc">SERVICELEVEL</SPAN>
           </div>
           <div id="top_third">
@@ -130,9 +131,9 @@
       <div id="middle">
           <div id="middle_first"><svg></svg></div>
           <div id="middle_second">
-            <svg id="circle_widget1"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px">ENGLAND</text></svg>
-            <svg id="circle_widget2"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px">HOLLAND</text></svg>
-            <svg id="circle_widget3"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px">DENMARK</text></svg>
+            <svg id="circle_widget1"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">ENGLAND</text></svg>
+            <svg id="circle_widget2"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">HOLLAND</text></svg>
+            <svg id="circle_widget3"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">DENMARK</text></svg>
           </div>
           <div id="middle_third"></div>
       </div>
@@ -177,14 +178,14 @@
         });
 
         var arc4 = new d3arcSingle("#circle_widget4",{
-          width:170,
-          height:300,
+          width:144.5,
+          height:144.5,
           bgWidth:8,
           bgColor:"#1E272E",
           arcWidth:8,
           arcColors:["red","white"],
           thresholds:[0.4],
-          valueSize:40
+          valueSize:36
         });
 
         var leftarc1 = new d3arcSingle("#leftarc1",{
@@ -307,13 +308,20 @@
           }
         },5000);
 
-      $("#container").hide();
+      //splashscreen
 
-      setTimeout(function(){
+      
 
-        $("#splash").fadeTo(2000,0);
-        $("#container").fadeTo(2000,1);
-        },3000);
+      var splash = false;
+      
+      if(splash == true){
+        $("#splash").show();
+        $("#container").hide();
+        setTimeout(function(){
+          $("#splash").fadeTo(2000,0);
+          $("#container").fadeTo(2500,1);
+          },3000);
+      }
 
       //handle rightmenu apperance
 
