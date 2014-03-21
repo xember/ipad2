@@ -300,20 +300,19 @@
           }
         },1500);
 
-
       setInterval(function(){
           if( typeof($('body').data('stats')) !== "undefined" ){       
-            if( $('body').data('stats').hasOwnProperty('RehousingLongestWaitTime') ){
-              //clock.increment($('body').data('stats')['RehousingLongestWaitTime']);
-              clock.increment(Math.floor(Math.random() * 80) + 1);
+            if( $('body').data('stats').hasOwnProperty('TotalCalls') ){
+              clock.increment(parseInt($('body').data('stats')['TotalCalls']));
+              console.log($('body').data('stats')['TotalCalls']);
             }
           }
         },5000);
 
-      setInterval(function(){
-            bar1.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);
 
-            bar2.render([Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50),Math.floor(Math.random() * 50)]);    
+     setInterval(function(){
+            bar1.render([parseInt($('body').data('stats')['WaitingRehousing']),parseInt($('body').data('stats')['WaitingOutage']),parseInt($('body').data('stats')['WaitingInvoices']),parseInt($('body').data('stats')['WaitingComplaints']),parseInt($('body').data('stats')['WaitingMetering']),parseInt($('body').data('stats')['WaitingConnections']),parseInt($('body').data('stats')['WaitingOthers'])]);
+            bar2.render([parseInt($('body').data('stats')['WaitingRehousing']),parseInt($('body').data('stats')['WaitingOutage']),parseInt($('body').data('stats')['WaitingInvoices']),parseInt($('body').data('stats')['WaitingComplaints']),parseInt($('body').data('stats')['WaitingMetering']),parseInt($('body').data('stats')['WaitingConnections']),parseInt($('body').data('stats')['WaitingOthers'])]);
         },4000);
 
 
