@@ -276,8 +276,11 @@
             if( $('body').data('stats').hasOwnProperty('ServiceLevel4') ){
               arc4.render($('body').data('stats')['ServiceLevel4']/100);
             }
+            if( $('body').data('stats').hasOwnProperty('RehousingLongestWaitTime') ){
+              gauge1.render($('body').data('stats')['RehousingLongestWaitTime']);
+            } 
           }
-        },5000);
+        },2000);
 
       //leftmenu arcs
   function ss_leftmenu(arg){
@@ -298,10 +301,6 @@
             if( $('body').data('stats').hasOwnProperty('ServiceLevel5') ){
               leftarc5.render($('body').data('stats')['ServiceLevel5']/100);
             }
-
-            if( $('body').data('stats').hasOwnProperty('RehousingLongestWaitTime') ){
-              gauge1.render($('body').data('stats')['RehousingLongestWaitTime']);
-            } 
      
         },1000);
     }
@@ -318,7 +317,7 @@
               console.log($('body').data('stats')['TotalCalls']);
             }
           }
-        },12000);
+        },8000);
 
 
      setInterval(function(){
