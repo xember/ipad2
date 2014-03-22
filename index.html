@@ -331,7 +331,7 @@
 
       
 
-      var splash = false;
+      var splash = true;
       
       if(splash == true){
         $("#splash").show();
@@ -341,6 +341,13 @@
           $("#container").fadeTo(2500,1);
           },3000);
       }
+
+      $(function(){
+        $("#splash").click(function(){
+          $("#splash").hide();
+          $("#container").show();
+        })
+      });
 
       //handle rightmenu apperance
 
