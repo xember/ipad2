@@ -109,6 +109,7 @@
             <img id="threed" src="res\images\3d-effect.png">
           </div>
           <div id="top_second">
+            <img id="trend" src="res\images\trend.png" width="120px">
             <svg id="background_circle"><circle cx="77" cy="77" r="68" stroke="black" stroke-width="16" fill="none"/></svg>
             <svg id="circle_widget4" width="120" height="150" viewBox="0 0 120 150"></svg>
             <span id="totalsl"class="desc">SERVICELEVEL</SPAN>
@@ -314,7 +315,6 @@
           if( typeof($('body').data('stats')) !== "undefined" ){       
             if( $('body').data('stats').hasOwnProperty('TotalCalls') ){
               clock.increment(parseInt($('body').data('stats')['TotalCalls']));
-              console.log($('body').data('stats')['TotalCalls']);
             }
           }
         },8000);
