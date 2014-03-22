@@ -7,6 +7,7 @@
   <!-- stylesheets -->
   <link rel="stylesheet" type="text/css" href="res/rts.css"><!-- css with some preset styles used by rts.js -->
   <link rel="stylesheet" type="text/css" href="res/style.css">
+  <link rel="stylesheet" type="text/css" href="res/settingstyle.css">
   <link rel="stylesheet" type="text/css" href="res/flipclock.css">  
   <link rel="stylesheet" href="res/royalslider/royalslider.css" >
   <link rel="stylesheet" href="res/royalslider/skins/default/rs-default.css" >
@@ -83,7 +84,7 @@
             <td id="lightbluecell"><img id="" src="res\images\icon-alert.png" width="29px"></td>
           </tr>
           <tr>
-            <td id="bluecell"><img id="" src="res\images\icon-settings.png" width="30px"></td>
+            <td id="bluecell"><img id="settings" src="res\images\icon-settings.png" width="30px"></td>
           </tr>
         </table>
       </div>
@@ -129,13 +130,13 @@
       </div>
     <div class="break"></div>
       <div id="middle">
-          <div id="middle_first"><svg id="barchart1"></svg></div>
+          <div id="middle_first"><svg id="barchart1"></svg><img id="baricons1" src="res\images\bar-icons.png" width="150px"></div>
           <div id="middle_second">
             <svg id="circle_widget1"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">ENGLAND</text></svg>
             <svg id="circle_widget2"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">HOLLAND</text></svg>
             <svg id="circle_widget3"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">DENMARK</text></svg>
           </div>
-          <div id="middle_third"><svg id="barchart2"></svg></div>
+          <div id="middle_third"><svg id="barchart2"></svg><img id="baricons2" src="res\images\bar-icons.png" width="150px"></div>
       </div>
     <div class="break"></div>
       <div id="bottom">
@@ -143,6 +144,7 @@
           <div id="right"><img id="graph2" src="res\images\graph2.png" width="480px"></div>
       </div>
     </div>
+    <div id="settingcontainer"></div>
     <script type="text/javascript">
         var arc1 = new d3arcSingle("#circle_widget1",{
           width:70,
@@ -274,8 +276,13 @@
             if( $('body').data('stats').hasOwnProperty('ServiceLevel4') ){
               arc4.render($('body').data('stats')['ServiceLevel4']/100);
             }
+          }
+        },5000);
 
-            //leftmenu arcs
+      //leftmenu arcs
+  function ss_leftmenu(arg){
+    if(arg == true){
+      var leftarcs = setInterval(function(){
             if( $('body').data('stats').hasOwnProperty('ServiceLevel1') ){
               leftarc1.render($('body').data('stats')['ServiceLevel1']/100);
             }
@@ -294,11 +301,15 @@
 
             if( $('body').data('stats').hasOwnProperty('RehousingLongestWaitTime') ){
               gauge1.render($('body').data('stats')['RehousingLongestWaitTime']);
-            }
-         
-                     
-          }
-        },5000);
+            } 
+     
+        },1000);
+    }
+    else{
+        clearInterval(leftarcs);
+    }
+  }
+ 
 
       setInterval(function(){
           if( typeof($('body').data('stats')) !== "undefined" ){       
@@ -339,6 +350,9 @@
               $("#stripesbutton").click(function() { 
                   $("#menuright").show();
                   $("#shadow").show();
+                 $("#menuleft").hide();
+                 $("#btn-close").hide();
+                 ss_leftmenu(false);
               });  
           });
 
@@ -355,6 +369,9 @@
               $("#squarebutton").click(function() {  
                  $("#menuleft").show();
                  $("#btn-close").show();
+                 ss_leftmenu(true);
+                  $("#menuright").hide();
+                  $("#shadow").hide(); 
               });  
           });
 
@@ -362,9 +379,16 @@
               $("#btn-close").click(function() {  
                  $("#menuleft").hide();
                  $("#btn-close").hide();
+                 ss_leftmenu(false);
               });  
           });
-
+    //handle setting option
+          $(function() {  
+              $("#settings").click(function() {  
+                  $("#container").hide();
+                  $("#settingcontainer").show();
+              });  
+          });
 
       //handle clicks on non existant functions by triggering a native device alert
 
