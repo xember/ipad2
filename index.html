@@ -19,7 +19,7 @@
   <script type="text/javascript" src="res/royalslider/jquery.royalslider.min.js"></script>
   <script type="text/javascript" src="res/widgets/d3arcSingle.js"></script>
   <script type="text/javascript" src="res/widgets/d3gauge1.js"></script>
-  <script type="text/javascript" src="res/widgets/d3singleBar.js"></script>
+  <script type="text/javascript" src="res/widgets/d3BarChart.js"></script>
   <script type="text/javascript" src="res/widgets/base.js"></script>
   <script type="text/javascript" src="res/widgets/flipclock.js"></script>
   <script type="text/javascript" src="res/widgets/counter.js"></script>
@@ -36,7 +36,8 @@
 
  </head>
  <body>
-    <script type="text/javascript"> 
+    <script type="text/javascript">
+          var splash = false; 
           rts.jws("ws://rts-demo.prime-contact.com:8888/jWebSocket/jWebSocket"); // this will initiate a websocket connection to our simulator
           rts.object('site','simulator');   // this opens a connection to our simulator statistics
     </script>
@@ -131,13 +132,28 @@
       </div>
     <div class="break"></div>
       <div id="middle">
-          <div id="middle_first"><svg id="barchart1"></svg><img id="baricons1" src="res\images\bar-icons.png" width="150px"></div>
+          <div id="middle_first">
+            <svg id="barchart1"></svg><img id="baricons1" src="res\images\bar-icons.png" width="150px">
+            <span id="waiting">Waiting Calls</span>
+            <span id="totalwaiting">Total Waiting</span>
+            <span id="averagewaiting">Average Waiting</span>
+            <span id="number1">25</span>
+            <span id="number2">50</span>
+          </div>
           <div id="middle_second">
             <svg id="circle_widget1"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">ENGLAND</text></svg>
             <svg id="circle_widget2"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">HOLLAND</text></svg>
             <svg id="circle_widget3"><text class="label" x="35" y="100" text-anchor="middle" fill="#969EAC" font-size="12px" font-weight="bold">DENMARK</text></svg>
           </div>
-          <div id="middle_third"><svg id="barchart2"></svg><img id="baricons2" src="res\images\bar-icons.png" width="150px"></div>
+          <div id="middle_third">
+            <svg id="barchart2"></svg>
+            <img id="baricons2" src="res\images\bar-icons.png" width="150px">
+            <span id="waitingtime">Waiting Time</span>
+            <span id="averagewaitingtime">Average Waiting</span>
+            <span id="longestwaiting">Longest Waiting</span>
+            <span id="timer1">01:00</span>
+            <span id="timer2">03:00</span>
+          </div>
       </div>
     <div class="break"></div>
       <div id="bottom">
@@ -329,10 +345,7 @@
 
       //splashscreen
 
-      
-
-      var splash = true;
-      
+  
       if(splash == true){
         $("#splash").show();
         $("#container").hide();
@@ -431,27 +444,33 @@
         StatusBar.backgroundColorByHexString("#0066AE");
     }
        
-  var bar1 = d3singleBar("#barchart1",{
-        width: 200, // default width
-        height: 62, // default height
-        duration: 2000, // transition duration
-        bgWidth: 30, // width of background ring
-        bgColor: "black", // bar background
-        bgbarWidth: 8, // width of arc that represents the value
-        barColor: "#0051c3", // arc foreground colors (depend on threshold values)
+  var bar1 = d3BarChart("#barchart1",{
+        width: 200, 
+        height: 62, 
+        threshold: [12, 23, 16, 39, 24, 49, 32],
+        thresholdcolor: "#F9631C",
+        thresholdwidth: 1,
+        duration: 2000, 
+        bgWidth: 30, 
+        bgColor: "black", 
+        bgbarWidth: 8, 
+        barColor: "#0066AE", 
         barRounding: 5,
         barWidth: 8,
         spacer: 14
     });
 
-  var bar2 = d3singleBar("#barchart2",{
-        width: 200, // default width
-        height: 62, // default height
-        duration: 2000, // transition duration
-        bgWidth: 30, // width of background ring
-        bgColor: "black", // bar background
-        bgbarWidth: 8, // width of arc that represents the value
-        barColor: "#0051c3", // arc foreground colors (depend on threshold values)
+  var bar2 = d3BarChart("#barchart2",{
+        width: 200, 
+        height: 62, 
+        threshold: [20, 40, 16, 39, 48, 10, 32],
+        thresholdcolor: "#F9631C",
+        thresholdwidth: 1,
+        duration: 2000, 
+        bgWidth: 30, 
+        bgColor: "black", 
+        bgbarWidth: 8, 
+        barColor: "#0066AE", 
         barRounding: 5,
         barWidth: 8,
         spacer: 14

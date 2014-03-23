@@ -351,3 +351,77 @@ left: 325px;
 	top:241px;
 	left: 114px;
 }
+#waiting{
+	position: relative;
+	top: -37px;
+	left: 89px;
+	font-size: 16px;
+	color: white;
+}
+#totalwaiting{
+	position: relative;
+	top: -5px;
+	left: 18px;
+	font-size: 11px;
+	color: #0078CC;
+}
+#averagewaiting{
+	position: relative;
+	top: -9px;
+	left: 251px;
+	font-size: 11px;
+	color: #F9631C;
+}
+#waitingtime{
+	position: relative;
+	top: -37px;
+	left: 86px;
+	font-size: 16px;
+	color: white;
+}
+#averagewaitingtime{
+	position: relative;
+	top: -5px;
+	left: 0px;
+	font-size: 11px;
+	color: #0078CC;
+}
+#longestwaiting{
+	position: relative;
+	top: -9px;
+	left: 254px;
+	font-size: 11px;
+	color: #F9631C;
+}
+#timer1{
+	position: relative;
+	top: -27px;
+	left: -67px;
+	font-size: 11px;
+	color: gray;
+	font-weight: bold;
+}
+#timer2{
+	position: relative;
+	top: -60px;
+	left: -103px;
+	font-size: 11px;
+	color: gray;
+	font-weight: bold;
+}
+#number1{
+	position: relative;
+	top: -27px;
+	left: -52px;
+	font-size: 11px;
+	color: gray;
+	font-weight: bold;
+}
+#number2{
+	position: relative;
+	top: -55px;
+	left: -70px;
+	font-size: 11px;
+	color: gray;
+	font-weight: bold;
+}

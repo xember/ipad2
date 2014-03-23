@@ -1,27 +1,31 @@
 /*
-	Function below is a generic reusable chart for a simple arc.
+	Function below is a generic reusable chart for a barchart.
 	An empty <svg/> tag must exist in your html, and the selector must select that single element.
 	Configurations options can be passed in an object through the second variable.
-	$Revision: 80 $
+	$Revision: 40 $
 
 	Sample:
-    var chart = new d3singleBar("#d3 svg", {
-        width: 120,
-        height: 120,
-        bgWidth: 18,
-        bgColor: "black",
-        arcWidth: 14,
-        arcColors: ["#277dba", "red"],
-        thresholds: [0.8],
-        valueSize: 20
+    var chart = new d3BarChart("#d3 svg", {
+        data: [40, 50, 30, 55, 20, 50, 30],
+        threshold: [20, 20, 20, 20, 20, 20, 20],
+        thresholdcolor: "orange",
+        width: 200, 
+        height: 200, 
+        duration: 750, 
+        bgColor: "black", 
+        bgbarWidth: 25, 
+        barColor: "red", 
+        barRounding: 5, 
+        barWidth: 25, 
+        spacer: 5 
     });
-	chart.render(0.5);
+	chart.render([10,20,30,40,50,60,70]);
 
 */
-function d3singleBar(selector, custom) {
+function d3BarChart(selector, custom) {
     // basic checks
     if (typeof(d3) !== "object" || typeof(rts) !== "object") {
-        alert("d3gauge1 needs both D3 and RTS!");
+        alert("d3BarChart needs both D3 and RTS!");
         return false;
     }
     // check if selector is filled
@@ -31,25 +35,25 @@ function d3singleBar(selector, custom) {
     }
     // generic properties
     var _chart = {},
-        _current = 0,
-        _data = 0,
         _svg,
-        _value,
         _bgrect,
-        _rect;
+        _rect,
+        _threshold;
     // default configuration values for this specific chart
     var config = {
-        data: [40, 50, 30, 55, 20, 50, 30],
+        data: [40, 50, 30, 55, 20, 50, 30], //dataset
+        threshold: [20, 20, 20, 20, 20, 20, 20], // thresholdvalue
+        thresholdwidth: 1, //threshold line width
+        thresholdcolor: "purple", //thresholdcolor
         width: 200, // default width
         height: 200, // default height
         duration: 750, // transition duration
-        bgWidth: 30, // width of background bar
         bgColor: "black", // bar backgroundcolor
         bgbarWidth: 25, // width of background bar
         barColor: "red", // arc foreground colors (depend on threshold values)
-        barRounding: 5,
-        barWidth: 25,
-        spacer: 5
+        barRounding: 5, // top and bottom roundings
+        barWidth: 25, // foreground bar width
+        spacer: 5 // space between bars
     }
     // overwrite config properties with custom values (if present)
     if (custom) {
@@ -102,6 +106,27 @@ function d3singleBar(selector, custom) {
             return d;
         });
 
+    //add threshold lines
+    _threshold = _svg.selectAll("svg")
+        .data(config.threshold)
+        .enter()
+        .append("line")
+        .attr("x1", function(d, i) {
+            return (config.barWidth + config.spacer) * i;
+        })
+        .attr("y1", function(d) {
+            return d;
+        })
+        .attr("x2", function(d, i) {
+            return ((config.barWidth + config.spacer) * i) + config.barWidth;
+        })
+        .attr("y2", function(d) {
+            return d;
+        })
+        .style("stroke", config.thresholdcolor)
+        .style("stroke-width", config.thresholdwidth)
+
+
     _chart.render = function(data) {
         _rect
             .data(data)
@@ -115,8 +140,6 @@ function d3singleBar(selector, custom) {
             });
 
     };
-
-
 
 
     // always return chart object
