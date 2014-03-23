@@ -42,9 +42,7 @@
           rts.object('site','simulator');   // this opens a connection to our simulator statistics
     </script>
     <div id="splash"><img src="res\images\splash.png"></div>
-    <div id="container">
-     <img id="btn-close" src="res\images\btn-close.png" width="20px">
-      <div id="menuleft">
+    <div id="menuleft">
         <table id="menutableleft">
           <tr><td><svg id="leftarc1"></svg></td></tr>
           <tr><td><svg id="leftarc2"></svg></td></tr>
@@ -89,6 +87,9 @@
           </tr>
         </table>
       </div>
+    <div id="container">
+     <img id="btn-close" src="res\images\btn-close.png" width="20px">
+      
       <div id="top">
           <div id="top_first"><img id="squarebutton" src="res\images\square.png" width="27px"><img id="camera" src="res\images\camera.png" width="25px">
             <div id="clockbox">
@@ -126,8 +127,6 @@
               <br>
               <span id="AWTText" class="desc">AVERAGE WAITING TIME</span>
             </div>
-            
-            
           </div>
       </div>
     <div class="break"></div>
@@ -161,7 +160,17 @@
           <div id="right"><img id="graph2" src="res\images\graph2.png" width="480px"></div>
       </div>
     </div>
-    <div id="settingcontainer"></div>
+    <div id="settingcontainer">
+      <div id="stleft">
+        <div id="first">
+          <img id="stsquarebutton" src="res\images\square_gray.png" width="27px">
+        </div>
+        <div id="second"></div>
+      </div>
+      <div id="stright">
+        <img id="ststripesbutton" src="res\images\stripes_gray.png" width="30px">
+      </div>
+    </div>
     <script type="text/javascript">
         var arc1 = new d3arcSingle("#circle_widget1",{
           width:70,
@@ -365,8 +374,13 @@
       //handle rightmenu apperance
 
       $(document).ready(function() {
+        //temp functions for development
+        //$("#settingcontainer").show();
+        //$("#container").hide();
+
+        //end of temp functions
            $(function() {  
-              $("#stripesbutton").click(function() { 
+              $("#stripesbutton, #ststripesbutton").click(function() { 
                   $("#menuright").show();
                   $("#shadow").show();
                  $("#menuleft").hide();
@@ -385,7 +399,7 @@
 
       //handele leftmenu apperance
           $(function() {  
-              $("#squarebutton").click(function() {  
+              $("#squarebutton, #stsquarebutton").click(function() {  
                  $("#menuleft").show();
                  $("#btn-close").show();
                  ss_leftmenu(true);
@@ -402,13 +416,17 @@
               });  
           });
     //handle setting option
-          $(function() {  
               $("#settings").click(function() {  
                   $("#container").hide();
+                  $("#menuright").hide();
                   $("#settingcontainer").show();
               });  
-          });
-
+    //handle overview button
+              $("#overview").click(function() {  
+                  $("#container").show();
+                  $("#settingcontainer").hide();
+                  $("#menuright").hide();
+              });  
       //handle clicks on non existant functions by triggering a native device alert
 
           $(function() {  
