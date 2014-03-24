@@ -362,14 +362,13 @@
           $("#splash").fadeTo(2000,0);
           $("#container").fadeTo(2500,1);
           },3000);
-        StatusBar.show();
+
       }
 
       $(function(){
         $("#splash").click(function(){
           $("#splash").hide();
           $("#container").show();
-          StatusBar.show();
         })
       });
 
@@ -460,6 +459,7 @@
     // Cordova is ready
     //
     function onDeviceReady() {
+        StatusBar.show();
         StatusBar.overlaysWebView(false);
         StatusBar.backgroundColorByHexString("#0066AE");
     }
