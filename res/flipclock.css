@@ -11,7 +11,7 @@ background-color: #0a273a; /* layer fill content */
 -webkit-box-shadow: 0 0 20px rgba(4,17,25,.33), inset 0 1px 27px 5px rgba(3,11,17,.5); /* drop shadow and inner shadow */
 box-shadow: 0 0 20px rgba(4,17,25,.33), inset 0 1px 27px 5px rgba(3,11,17,.5); /* drop shadow and inner shadow */
 width: 228px;
-height: 73px;
+height: 75px;
 position: absolute;
 left: 51.5px;
 top: 114.5px;
