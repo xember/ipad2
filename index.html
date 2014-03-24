@@ -365,12 +365,12 @@
 
       }
 
-      $(function(){
+
         $("#splash").click(function(){
           $("#splash").hide();
           $("#container").show();
         })
-      });
+
 
       //handle rightmenu apperance
 
@@ -380,7 +380,6 @@
         //$("#container").hide();
 
         //end of temp functions
-           $(function() {  
               $("#stripesbutton, #ststripesbutton").click(function() { 
                   $("#menuright").show();
                   $("#shadow").show();
@@ -388,18 +387,14 @@
                  $("#btn-close").hide();
                  ss_leftmenu(false);
               });  
-          });
 
-          $(function() {  
+  
               $("#exit").click(function() {  
                   $("#menuright").hide();
                   $("#shadow").hide(); 
               });  
-          });
-
 
       //handele leftmenu apperance
-          $(function() {  
               $("#squarebutton, #stsquarebutton").click(function() {  
                  $("#menuleft").show();
                  $("#btn-close").show();
@@ -407,15 +402,14 @@
                   $("#menuright").hide();
                   $("#shadow").hide(); 
               });  
-          });
 
-          $(function() {  
+
               $("#btn-close").click(function() {  
                  $("#menuleft").hide();
                  $("#btn-close").hide();
                  ss_leftmenu(false);
               });  
-          });
+
     //handle setting option
               $("#settings").click(function() {  
                   $("#container").hide();
@@ -430,7 +424,7 @@
               });  
       //handle clicks on non existant functions by triggering a native device alert
 
-          $(function() {  
+
               $("#location, #queue, #group, #agent").click(function() {  
                 navigator.notification.alert(
                     'This function has not been implemented (yet).',
@@ -439,7 +433,7 @@
                     'Done'                  // buttonName
                 );
               });  
-          });
+
 
 
         // Instantiate a counter
