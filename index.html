@@ -362,12 +362,14 @@
           $("#splash").fadeTo(2000,0);
           $("#container").fadeTo(2500,1);
           },3000);
+        StatusBar.show();
       }
 
       $(function(){
         $("#splash").click(function(){
           $("#splash").hide();
           $("#container").show();
+          StatusBar.show();
         })
       });
 
