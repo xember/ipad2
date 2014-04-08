@@ -108,13 +108,16 @@ function d3arcSingle(selector, custom) {
         .attr("d", _d3arc);
     // function that renders/updates the chart with new data value
     _chart.render = function(data) {
+        config.thresholds[0] = localStorage.getItem("bottomth");
+        config.thresholds[1] = localStorage.getItem("middleth");
+        config.thresholds[2] = localStorage.getItem("topth");
         // data must be a number (between 0 and 1)
         if (arguments.length > 0 && data !== null && data <= 1 && !isNaN(data)) {
             // store data from input
             _data = data * 2 * Math.PI;
             // change arcColor based on value
             for (var i in config.arcColors) {
-                var startAngle = (i == 0) ? 0 : config.thresholds[i - 1];
+                var startAngle = (i == 0) ? 0 : config.thresholds[i];
                 if (startAngle <= data) {
                     config.arcColor = config.arcColors[i];
                     config.valueColor = config.arcColors[i];
@@ -140,9 +143,13 @@ function d3arcSingle(selector, custom) {
                     };
                 });
             // update percent text in circle
-            _value.text(Math.round(data * 100) + "%");
-            _value.attr("fill", config.valueColor);
-            _value.attr("font-weight", "bold");
+            _value.text(Math.round(data * 100) + "%")
+                .transition()
+                .duration(config.duration)
+                .attr("fill", config.valueColor)
+                .attr("font-weight", "bold")
+
+
         }
     };
     // always return chart object

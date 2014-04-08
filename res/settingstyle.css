@@ -8,10 +8,12 @@
 	left: 0px;
 	position: absolute;
 	display: none;
+	background-color: white;
+	transform: transale3d(0,0,0);
 }
 #stleft{
 	float: left;
-	width: 599px;
+	width: 642px;
 	height: 748px;
 }
 #stleft div#first{
@@ -20,22 +22,190 @@
 }
 #stleft div#second{
 	width: 100%;
-	height: 523px;
+	height: 218px;
 	background-color: #005ABB;
+	border-top: solid black 7px;
 }
 #stright{
 	float: left;
-	width: 425px;
+	width: 382px;
 	height: 748px;
 	background-color: #ebebeb;
 }
 #ststripesbutton{
 	position: relative;
 	top: 20px;
-	left: 371px;
+	left: 334px;
 }
 #stsquarebutton{
 	position: relative;
 	top: 20px;
-	left: 20px;	
+	left: 20px;
+}
+#graysquare{
+	position: absolute;
+	left: 21px;
+	top:  115px;
+	background-color: #EBEBEB;
+	height:387px;
+	width:597.5px;
+}
+#graysquareheader{
+	position: absolute;
+	top: 68px;
+	left:21px;
+	height: 47px;
+	width: 598px;
+	background-color: #081E2D;
+}
+#graysquareheader table{
+	margin: 0px;
+	padding: 0px;
+	margin-left: 10px;
+}
+#tablename{
+	font-size: 24px;
+	color: white;
+	height: 47px;
+
+}
+#middlewhite{
+	position: relative;
+	left:24px;
+	top: 32px;
+	width: 547.5px;
+	height: 262.5px;
+	background-color: white;
+}
+#threshold1{
+	position: relative;
+	top:132.5px;
+}
+#nottext{
+	font-size: 18px;
+	font-weight: bold;
+	color: #636363;
+	position: absolute;
+	left: 197px;
+	top: 43px;
+}
+#overalltext{
+	font-size: 24px;
+	font-weight: bold;
+	color: #005AAB;
+	position: absolute;
+	left: 145px;
+	top: 75px;
+}
+#settingstext{
+	position: absolute;
+	left: 62px;
+	top: 19px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #636363;
+}
+#iconsettings {
+    position: absolute;
+    top: 328px;
+    left: 112px;
+}
+#camera2{
+    position: absolute;
+    top: 294px;
+    left: 24px;	
+}
+
+#buttonswitch1{
+	background-color: white;
+	height: 26px;
+	width: 57px;
+	position: absolute;
+	left: 352px;
+	top: 605px;
+	border-radius: 15px;
+}
+#buttoncircle1{
+	background-color: #005AAB;
+	height: 23px;
+	width: 23px;
+	position: relative;
+	left: 2px;
+	top: 1.5px;
+	border-radius: 20px;		
+}
+#buttonswitch2{
+	background-color: white;
+	height: 26px;
+	width: 57px;
+	position: absolute;
+	left: 352px;
+	top: 686px;
+	border-radius: 15px;
+}
+#buttoncircle2{
+	background-color: #005AAB;
+	height: 23px;
+	width: 23px;
+	position: relative;
+	left: 2px;
+	top: 1.5px;
+	border-radius: 20px;		
+}
+#lastpos {
+    position: absolute;
+    left: 354px;
+    top: 577px;
+    color: white;
+    font-size: 19px;
+}
+#inapp {
+    position: absolute;
+    left: 354px;
+    top: 654px;
+    color: white;
+    font-size: 19px;
+}
+#login {
+    position: absolute;
+    top: 80px;
+    width: 281px;
+    left: 677px;
+}
+#emailbutton{
+	position: absolute;
+	top: 685px;
+	left: 686px;
+	width: 139px;
+	height:	39.5px;
+	background-color: #005AAB;
+	border-radius: 4px;
+	line-height: 38px;
+	padding-left: 18px;
+	color: white;
+}
+#aboutbutton{
+	position: absolute;
+	top: 685px;
+	left: 861px;
+	width: 92px;
+	height:	39.5px;
+	background-color: #888;
+	border-radius: 4px;
+	line-height: 38px;
+	padding-left: 18px;
+	color: white;
+	z-index: 9;
+}
+#helptext{
+	position: absolute;
+	top: 610px;
+	left: 685px;
+	font-size: 19px;
+	color: #888;
+}
+#loc {
+    width: 300px;
+    top: 37px;
+    position: relative;
 }

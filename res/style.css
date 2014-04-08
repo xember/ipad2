@@ -13,6 +13,7 @@
 body{
 	overflow:hidden;
 	font-family: 'ubunturegular';
+	background-color: #0051c3;
 }
 
 #container{
@@ -24,11 +25,12 @@ body{
 	top: 0px;
 	left: 0px;
 	position: absolute;
+	display: none;
 }
 #splash{
 	overflow:hidden;
 	width: 1024px;
-	height: 768px;
+	height: 748px;
 	margin: 0px;
 	padding: 0px;
 	position: relative;
@@ -39,7 +41,7 @@ body{
 	width: 100%;
 }
 #top{
-	height: 364.5px;
+	height: 363px;
 	background-image: url('images/topbackground.png');
 	background-size: cover;
 
@@ -76,7 +78,8 @@ body{
 	float: left;
 }
 #gauge1{
-	margin-top: 80px;
+	position: absolute;
+	top: 130px;
 }
 #bgbgColor{
 
@@ -90,6 +93,7 @@ body{
 	height: 250px;
 	margin: 0px;
 	padding: 0px;
+	background-color: white;
 }
 #left{
 	height: 100%;
@@ -139,13 +143,80 @@ body{
 	margin: 0px;
 }
 #squarebutton{
+	position: relative;
 	margin-left: 20px;
 	margin-top: 20px;
 	margin-right: 7px;
 }
 #stripesbutton{
-	margin-left: 290px;
-	margin-top: 20px;	
+	position: absolute;
+	top: 22px;
+	left: 978px;
+}
+#offlinebutton{
+	position: relative;
+	left: 220px;
+	top: -3px;
+}
+#message-box {
+	position: relative;
+	top: 9px;
+	left: -57px;
+}
+#orangetext{
+	position: absolute;
+	left: 662px;
+	top: 15px;
+	color: #fe6419;
+    font-weight: bold;
+    font-size: 15px;
+}
+#whitetext{
+	position: absolute;
+	left: 662px;
+	top: 35px;
+	color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+#offlinehandler{
+	display: none;
+}
+
+.lft{
+	float: left;
+	width: 139px;
+	height: 138px;
+	border-bottom: solid gray 1px;
+}
+.rgt{
+	float: left;
+	width: 166px;
+	height: 113px;
+	margin-top: 25px;
+	border-bottom: solid gray 1px;
+}
+.rgt table{
+	border-collapse:separate; 
+	border-spacing:2px;
+}
+.leftarc{
+	margin-top: 25px;
+	margin-left: 25px;
+}
+
+.tablebigtxt{
+	font-size: 15px;
+	color: #959595;
+}
+.tabletxt{
+	font-size: 11px;
+	color: #000;
+}
+.tablebigfig{
+	font-size: 28px;
+	color: #70d72b;
+	padding-right: 20px;	
 }
 #menuright {
 	position:absolute;
@@ -153,18 +224,48 @@ body{
 	left:962px;
 	height: 748px;
 	width: 62px;
-	background-color: white;
-	z-index: 6;
 	display: none;
+	background-color: white;
+	margin: 0px;
+	padding:0px;
+	z-index: 10;
 }
-#menutableright{
+#transmenuright{
+	position: absolute;
+	height: 700px;
+	width: 100px;
+	top: 48px;
+	left: 924px;
+	z-index: 8;
+}
+#menutablerighttop{
 	width: 100%;
+	margin: 0px;
+	padding:0px;
 }
-#menutableright td{
+
+#menutablerighttop td{
 	text-align:center;
 	vertical-align: middle;
-	height: 73.5px;
+	height: 74px;
 	border-bottom: solid lightgray 1px;
+	margin: 0px;
+	padding:0px;
+}
+
+
+#menutablerightbottom{
+	width: 100%;
+	margin-top: 148px;
+	padding:0px;
+}
+#menutablerightbottom td{
+	text-align:center;
+	vertical-align: middle;
+	height: 74px;
+	border-bottom: solid lightgray 1px;
+	margin: 0px;
+	padding:0px;
 }
 #shadow {
 	position: absolute;
@@ -183,10 +284,17 @@ body{
 	height: 748px;
 	width: 305px;
 	background-color: white;
-	z-index: 6;
-	display: none;	
+	display: none;
+	z-index: 9;
 }
-
+#transmenuleft{
+	position: absolute;
+	height: 700px;
+	width: 62px;
+	top: 48px;
+	left: 0px;
+	z-index: 8;
+}
 #menutableleft{
 	width: 100%;
 }
@@ -248,7 +356,7 @@ body{
 #WAIT {
     position: absolute;
     top: 250px;
-    left: 50px;
+    left: 70px;
 }
 #ABAND {
     position: absolute;
@@ -310,21 +418,25 @@ body{
 #threed{
 	width: 218px;
     position: absolute;
-	left: 55px;
-	top: 154px;  
+	left: 57px;
+	top: 153px;  
 	z-index: 2;
 }
 #bluecell{
 	background-color: #012553;
+	border-bottom: 0px !important;
+	height: 75px !important;
 }
 #lightbluecell{
 	background-color: #005fb5;
+	border-bottom: 0px !important;
+	height: 75px !important;
 }
 #btn-close{
-display: none;
 position: absolute;
 top: 21px;
 left: 325px;
+display: none;
 }
 #barchart1{
 	position: relative;
